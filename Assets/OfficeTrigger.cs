@@ -10,16 +10,33 @@ public class OfficeTrigger : MonoBehaviour
     public BoxCollider2D Player;
     public int m_enemies;
 
+    public string nextScene;
+
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>();
+        Debug.Log(SceneManager.GetActiveScene().name);
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "2_Gym":
+                nextScene = "3_Office";
+                break;
+            case "4_Apollos":
+                nextScene = "5_Call2";
+                break;
+            case "6_ApolloHouse":
+                nextScene = "7_End";
+                break;
+
+        }
+        Debug.Log(nextScene);
     }
 
 
     private void Update()
     {
-        m_enemies = gameManager.m_enemiesNumber;
+        m_enemies = gameManager.enemiesNumber;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,8 +45,8 @@ public class OfficeTrigger : MonoBehaviour
        {
             if (m_enemies == 0)
             {
-                Debug.Log("Voy a la office");
-                SceneManager.LoadScene("3_Office");
+                Debug.Log("Voy a la sigiente");
+                SceneManager.LoadScene(nextScene);
             }
             
        }

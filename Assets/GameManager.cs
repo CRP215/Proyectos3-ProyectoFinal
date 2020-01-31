@@ -4,13 +4,28 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int m_enemiesNumber;
-    
+    public int enemiesNumber;
+    public bool canPassLevel;
+    public bool lastEnemy;
+    public bool noEnemies = false;
 
     void Update()
     {
-        m_enemiesNumber = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        //m_enemiesNumber = GameObject.FindObjectsOfType<Enemy>().Length;
-        Debug.Log("Hay " + m_enemiesNumber + " enemigos");
+        enemiesNumber = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        //enemiesNumber = GameObject.FindObjectsOfType<Enemy>().Length;
+        Debug.Log("Hay " + enemiesNumber + " enemigos");
+
+        if(enemiesNumber <= 0)
+        {
+            canPassLevel = true;
+        }
+        if (enemiesNumber == 1)
+        {
+            lastEnemy = true;
+        }
+        if (enemiesNumber == 0)
+        {
+            noEnemies = true;
+        }
     }
 }

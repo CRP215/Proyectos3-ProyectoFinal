@@ -288,7 +288,7 @@ public class Player : MonoBehaviour
     public IEnumerator die()
     {
         m_mainCharacterAnimation.ChangeAnimatorState("movingTransition", 5);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("0_Menu");
     }
 

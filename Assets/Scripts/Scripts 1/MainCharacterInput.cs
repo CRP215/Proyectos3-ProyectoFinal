@@ -46,11 +46,11 @@ public class MainCharacterInput : MonoBehaviour
 		{
 			m_mainCharacter.Jump ();
 		}
-		if (Input.GetKeyDown (KeyCode.E))
+		if (Input.GetKeyDown (KeyCode.P))
 		{
 			m_mainCharacter.Attack ();
 		}
-		if (Input.GetKeyDown (KeyCode.F))
+		if (Input.GetKeyDown (KeyCode.L))
 		{
 			m_mainCharacter.Block();
 		}
