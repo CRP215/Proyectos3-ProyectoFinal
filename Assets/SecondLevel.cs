@@ -15,6 +15,7 @@ public class SecondLevel : MonoBehaviour
 
     public GameManager gm;
 
+    public Vector3 posIni;
 
     private void Start()
     {
@@ -28,6 +29,10 @@ public class SecondLevel : MonoBehaviour
             if (canPassPart)
             {
                 partNumber++;
+                if(partNumber == 1)
+                {
+                    GameObject.Find("Player").transform.position = posIni;
+                }
             }
         }
     }

@@ -49,4 +49,8 @@ public class OfficeScene : MonoBehaviour
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(nextScene);
     }
+    public void callNext()
+    {
+        StartCoroutine("Next");
+    }
 }
